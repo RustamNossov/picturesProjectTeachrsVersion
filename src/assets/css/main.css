@@ -1210,6 +1210,9 @@ h4 {
   padding-top: 0;
   padding-bottom: 0;
 }
+.status {
+  text-align: center;
+}
 .popup-design .form input,
 .popup-design .form textarea {
   border: none;
