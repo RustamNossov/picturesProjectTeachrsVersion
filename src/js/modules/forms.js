@@ -1,4 +1,4 @@
-// import checkNumInputs from './checkNumInputs';
+import {postData} from '../services/requests';
 
 const forms = () => {
 
@@ -26,16 +26,8 @@ const forms = () => {
         //     });
         // });
         
-          const postData = async (url, data) => {
-              let res = await fetch(url, {
-                  method: 'POST',
-                  body: data
-              });
-
-              return await res.text();
-
-          };
-
+         
+ 
           const clearInputs = () => {
             input.forEach( item => {
                 item.value = '';              
@@ -47,7 +39,7 @@ const forms = () => {
 
           upload.forEach(item => {
               item.addEventListener('input', () => {
-                  console.log(item.files[0]);
+                 // console.log(item.files[0]);
                   let dots;
                   const arr = item.files[0].name.split('.');
                   arr[0].length > 6 ? dots = '...' : dots = '.';
@@ -89,11 +81,11 @@ const forms = () => {
                 let api;
                 item.closest('.popup-design') || item.classList.contains('calc-form') ? api = path.designer : api = path.question;
 
-                console.log(api);
+               // console.log(api);
 
                 postData(api, formData)
                 .then(res => {
-                    console.log(res);
+                   // console.log(res);
                     statusImg.setAttribute('src', message.ok);
                     textMessage.textContent = message.succes;
                 })
