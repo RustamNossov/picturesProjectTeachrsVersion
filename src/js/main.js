@@ -5,6 +5,7 @@ import mask from './modules/mask';
 import checkTextInputs from './modules/checkTextInputs';
 import showMoreStyles from './modules/showMoreStyles';
 import serverShowMoreStyles from './modules/serverShowMoreStyles';
+import calc from './modules/calc';
 
 
 window.addEventListener( 'DOMContentLoaded', () => {
@@ -24,4 +25,6 @@ window.addEventListener( 'DOMContentLoaded', () => {
     //showMoreStyles('.button-styles', '.styles-2');
 
     serverShowMoreStyles('.button-styles', '#styles .row');
+
+    calc('#size', '#material', '#options', '.promocode', '.calc-price');
 })
