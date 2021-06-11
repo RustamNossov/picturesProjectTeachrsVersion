@@ -33,7 +33,7 @@ const forms = () => {
                 item.value = '';              
             });
             upload.forEach(item => { 
-                item.previousElementSibling.style.display = 'none';
+                item.previousElementSibling.remove();//.style.display = 'none';
             })
           };
 
@@ -77,15 +77,25 @@ const forms = () => {
                 statusMessage.appendChild(textMessage);
 
                 const formData = new FormData(item);
-
+                
                 let api;
                 item.closest('.popup-design') || item.classList.contains('calc-form') ? api = path.designer : api = path.question;
 
-               // console.log(api);
+                //console.log(api);
+
+                if (item.classList.contains('calc-form')) {
+
+                    formData.append('size', item.querySelector('#size').value);
+                    formData.append('material', item.querySelector('#material').value);
+                    formData.append('options', item.querySelector('#options').value);
+                    formData.append('promocode', item.querySelector('.promocode').value);
+                    formData.append('calc-price', item.querySelector('.calc-price').innerText);
+
+                }
 
                 postData(api, formData)
                 .then(res => {
-                   // console.log(res);
+                    console.log(res);
                     statusImg.setAttribute('src', message.ok);
                     textMessage.textContent = message.succes;
                 })

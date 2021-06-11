@@ -6,6 +6,8 @@ import checkTextInputs from './modules/checkTextInputs';
 import showMoreStyles from './modules/showMoreStyles';
 import serverShowMoreStyles from './modules/serverShowMoreStyles';
 import calc from './modules/calc';
+import pictureSize from './modules/pictureSize';
+import accordion from './modules/accordion';
 
 
 window.addEventListener( 'DOMContentLoaded', () => {
@@ -27,4 +29,8 @@ window.addEventListener( 'DOMContentLoaded', () => {
     serverShowMoreStyles('.button-styles', '#styles .row');
 
     calc('#size', '#material', '#options', '.promocode', '.calc-price');
+
+    pictureSize('.sizes-block');
+
+    accordion('.accordion-heading');
 })
