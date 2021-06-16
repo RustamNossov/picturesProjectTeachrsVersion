@@ -4,7 +4,7 @@ const gulp = require("gulp");
 const webpack = require("webpack-stream");
 const browsersync = require("browser-sync");
 
-const dist = "/Users/rustam/.bitnami/stackman/machines/xampp/volumes/root/htdocs/picturesTeacherVersion";  // "./dist/";
+const dist =  "./dist/"; //"/Users/rustam/.bitnami/stackman/machines/xampp/volumes/root/htdocs/picturesTeacherVersion";  // "./dist/";
 
 gulp.task("copy-html", () => {
     return gulp.src("./src/index.html")
